@@ -45,6 +45,8 @@ en:
       tags_label: Tags
       uncategorized: "(uncategorized)"
     header:
+      new_rule: New rule
+      edit_rules: Edit rules
       edit_categories: Edit categories
       edit_imports: Edit imports
       edit_merchants: Edit merchants
@@ -54,6 +56,10 @@ en:
       transaction: transaction
       transactions: transactions
       import: Import
+      table:
+        transaction: Transaction
+        category: Category
+        amount: Amount
     toggle_recurring_section: Toggle upcoming recurring transactions
     searches:
       filters:

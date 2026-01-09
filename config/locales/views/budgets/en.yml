@@ -1,0 +1,10 @@
+---
+en:
+  budgets:
+    show:
+      tabs:
+        budgeted: Budgeted
+        actual: Actual
+      categories: Categories
+    header:
+      today: Today

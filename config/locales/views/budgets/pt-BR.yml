@@ -1,0 +1,10 @@
+---
+pt-BR:
+  budgets:
+    show:
+      tabs:
+        budgeted: Orçado
+        actual: Realizado
+      categories: Categorias
+    header:
+      today: Hoje

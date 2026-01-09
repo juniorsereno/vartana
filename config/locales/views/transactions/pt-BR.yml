@@ -44,6 +44,8 @@ pt-BR:
       tags_label: Tags
       uncategorized: "(sem categoria)"
     header:
+      new_rule: Nova regra
+      edit_rules: Editar regras
       edit_categories: Editar categorias
       edit_imports: Editar importações
       edit_merchants: Editar comerciantes
@@ -52,6 +54,10 @@ pt-BR:
     index:
       transaction: transação
       transactions: transações
+      table:
+        transaction: Transação
+        category: Categoria
+        amount: Valor
     searches:
       filters:
         amount_filter:
