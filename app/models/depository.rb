@@ -9,6 +9,7 @@ class Depository < ApplicationRecord
     "money_market" => { short: "MM", long: "Money Market" }
   }.freeze
 
+  class << self
     def color
       "#875BF7"
     end
