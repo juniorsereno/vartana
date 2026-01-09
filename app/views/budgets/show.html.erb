@@ -51,7 +51,7 @@
 
         <% if @budget.initialized? %>
           <%= render DS::Link.new(
-            text: "Edit",
+            text: t("defaults.actions.edit"),
             variant: "secondary",
             icon: "settings-2",
             href: budget_budget_categories_path(@budget)

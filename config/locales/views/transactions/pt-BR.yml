@@ -85,4 +85,5 @@ pt-BR:
         greater_than: maior que
         less_than: menor que
       form:
+        placeholder: "Buscar transações ..."
         toggle_selection_checkboxes: Alternar todas as caixas de seleção

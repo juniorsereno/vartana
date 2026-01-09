@@ -122,3 +122,23 @@ en:
       choose: Upload photo
       choose_label: (optional)
       change: Change photo
+    providers:
+      enable_banking:
+        title: Enable Banking
+        description: Connect to your bank account to automatically import transactions.
+        instructions: Click "Save Configuration", then use "Add Connection" to link your bank.
+        save: Save Configuration
+        update: Update Configuration
+        go_to_settings: Go to Settings → Providers
+        check_settings: Check Provider Settings
+      lunchflow:
+        title: Lunchflow
+        description: Connect to Lunchflow to import transactions.
+        instructions: Paste your API key below and click the Save button.
+        save: Save Configuration
+        update: Update Configuration
+      simplefin:
+        title: SimpleFIN
+        description: Connect to SimpleFIN to import transactions.
+        instructions: Paste the token below and click the Save button to enable SimpleFIN bank data sync.
+        save: Save Configuration

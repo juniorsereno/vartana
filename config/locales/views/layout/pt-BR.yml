@@ -17,3 +17,7 @@ pt-BR:
       footer:
         privacy_policy: Política de Privacidade
         terms_of_service: Termos de Serviço
+    application:
+      free_trial: Teste grátis
+      days_remaining: "%{count} dias restantes"
+      upgrade: Atualizar plano

@@ -21,6 +21,9 @@ pt-BR:
       submit: Continuar
       subtitle: Vamos completar seu perfil.
       title: Vamos configurar o básico
+      first_name_placeholder: "Primeiro nome"
+      last_name_placeholder: "Sobrenome"
+      household_name_placeholder: "Nome da família"
     show:
       message: Estamos muito empolgados por você estar aqui. No próximo passo, faremos
         algumas perguntas para completar seu perfil e então deixar tudo configurado.

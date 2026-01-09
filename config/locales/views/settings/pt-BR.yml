@@ -110,3 +110,23 @@ pt-BR:
       choose: Enviar foto
       choose_label: (opcional)
       change: Alterar foto
+    providers:
+      enable_banking:
+        title: Enable Banking
+        description: Conecte sua conta bancária para importar transações automaticamente.
+        instructions: Clique em "Salvar Configuração", depois use "Adicionar Conexão" para vincular seu banco.
+        save: Salvar Configuração
+        update: Atualizar Configuração
+        go_to_settings: Vá para Configurações → Provedores
+        check_settings: Verifique as Configurações do Provedor
+      lunchflow:
+        title: Lunchflow
+        description: Conecte-se ao Lunchflow para importar transações.
+        instructions: Cole sua chave de API abaixo e clique no botão Salvar.
+        save: Salvar Configuração
+        update: Atualizar Configuração
+      simplefin:
+        title: SimpleFIN
+        description: Conecte-se ao SimpleFIN para importar transações.
+        instructions: Cole o token abaixo e clique no botão Salvar para ativar a sincronização de dados bancários do SimpleFIN.
+        save: Salvar Configuração

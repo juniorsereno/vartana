@@ -96,9 +96,15 @@ pt-BR:
       x_seconds:
         one: "%{count} segundo"
         other: "%{count} segundos"
-      x_years:
-        one: "%{count} ano"
-        other: "%{count} anos"
+    defaults:
+      brand_name: "%{brand_name}"
+      product_name: "%{product_name}"
+      actions:
+        edit: "Editar"
+        delete: "Excluir"
+        save: "Salvar"
+        cancel: "Cancelar"
+        search: "Buscar"
     prompts:
       day: Dia
       hour: Hora
@@ -106,6 +112,17 @@ pt-BR:
       month: Mês
       second: Segundo
       year: Ano
+  account_types:
+    depository: "Dinheiro"
+    investment: "Investimentos"
+    crypto: "Cripto"
+    property: "Propriedades"
+    vehicle: "Veículos"
+    other_asset: "Outros Ativos"
+    credit_card: "Cartões de Crédito"
+    loan: "Empréstimos"
+    other_liability: "Outros Passivos"
+
   errors:
     format: "%{attribute} %{message}"
     messages:

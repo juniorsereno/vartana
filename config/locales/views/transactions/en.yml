@@ -88,4 +88,5 @@ en:
         greater_than: greater than
         less_than: less than
       form:
+        placeholder: "Search transactions ..."
         toggle_selection_checkboxes: Toggle all checkboxes

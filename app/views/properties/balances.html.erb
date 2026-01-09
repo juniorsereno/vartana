@@ -19,7 +19,7 @@
           <!-- Next button -->
           <div class="flex justify-end mt-4">
             <%= render DS::Button.new(
-              text: @account.active? ? "Save" : "Next",
+              text: @account.active? ? t("properties.buttons.save") : t("properties.buttons.next"),
               variant: "primary",
             ) %>
           </div>

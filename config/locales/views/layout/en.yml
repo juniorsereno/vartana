@@ -17,3 +17,7 @@ en:
       footer:
         privacy_policy: Privacy Policy
         terms_of_service: Terms of Service
+    application:
+      free_trial: Free trial
+      days_remaining: "%{count} days remaining"
+      upgrade: Upgrade

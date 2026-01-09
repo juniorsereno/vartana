@@ -21,6 +21,9 @@ en:
       submit: Continue
       subtitle: Let's complete your profile.
       title: Let's set up the basics
+      first_name_placeholder: "First name"
+      last_name_placeholder: "Last name"
+      household_name_placeholder: "Household name"
     show:
       message: We’re really excited you’re here. In the next step we’ll ask you a
         few questions to complete your profile and then get you all set up.

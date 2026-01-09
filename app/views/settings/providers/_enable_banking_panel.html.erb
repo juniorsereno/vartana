@@ -1,13 +1,21 @@
 <div class="space-y-4">
-  <div class="prose prose-sm text-secondary">
-    <p class="text-primary font-medium">Setup instructions:</p>
-    <ol>
-      <li>Visit your <a href="https://enablebanking.com" target="_blank" rel="noopener noreferrer" class="link">Enable Banking</a> developer account to get your credentials</li>
-      <li>Select your country code from the dropdown below</li>
-      <li>Enter your Application ID and paste your Client Certificate (including the private key)</li>
-      <li>Click Save Configuration, then use "Add Connection" to link your bank</li>
-    </ol>
+  <div class="p-4 bg-surface rounded-lg border border-gray-200 space-y-3">
+    <h4 class="font-medium text-primary flex items-center gap-2">
+      <%= icon "banknote", class: "w-5 h-5 text-blue-500" %>
+      <%= t("settings.providers.enable_banking.title") %>
+    </h4>
+    <p class="text-sm text-secondary">
+      <%= t("settings.providers.enable_banking.description") %>
+    </p>
+    <ul class="text-sm text-secondary list-disc pl-5 space-y-1">
+      <li><%= t("settings.providers.enable_banking.instructions.step_1", link: "https://enablebanking.com") %></li>
+      <li><%= t("settings.providers.enable_banking.instructions.step_2") %></li>
+      <li><%= t("settings.providers.enable_banking.instructions.step_3") %></li>
+      <li><%= t("settings.providers.enable_banking.instructions.step_4") %></li>
+    </ul>
+  </div>
 
+  <div class="prose prose-sm text-secondary">
     <p class="text-primary font-medium">Field descriptions:</p>
     <ul>
       <li><strong>Country Code:</strong> ISO 3166-1 alpha-2 country code (e.g., GB, DE, FR) - determines available banks</li>
@@ -96,9 +104,9 @@
                         disabled: has_authenticated_connections && !is_new_record %>
 
     <% unless has_authenticated_connections && !is_new_record %>
-      <div class="flex justify-end">
-        <%= form.submit is_new_record ? "Save Configuration" : "Update Configuration",
-                        class: "inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 transition-colors" %>
+      <div class="pt-4 border-t border-gray-200">
+        <%= form.submit is_new_record ? t("settings.providers.enable_banking.save") : t("settings.providers.enable_banking.update"),
+            class: "w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed" %>
       </div>
     <% end %>
   <% end %>

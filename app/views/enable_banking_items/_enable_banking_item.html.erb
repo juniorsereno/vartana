@@ -69,7 +69,7 @@
         <%= render DS::Menu.new do |menu| %>
           <% menu.with_item(
             variant: "button",
-            text: "Delete",
+            text: t("defaults.actions.delete"),
             icon: "trash-2",
             href: enable_banking_item_path(enable_banking_item),
             method: :delete,

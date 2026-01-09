@@ -53,7 +53,7 @@ module Accountable
     end
 
     def display_name
-      self.name.pluralize.titleize
+      I18n.t("account_types.#{name.underscore}", default: name.pluralize.titleize)
     end
 
     def balance_money(family)

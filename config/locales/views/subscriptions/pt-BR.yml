@@ -1,4 +1,5 @@
 ---
 pt-BR:
   subscriptions:
-    self_hosted_alert: "%{product_name} não está disponível no modo self-hosted."
+    upgrade:
+      account_settings: Configurações da Conta

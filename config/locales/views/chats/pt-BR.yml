@@ -1,0 +1,6 @@
+---
+pt-BR:
+  chats:
+    demo_banner_title: "Modo de Demonstração Ativo"
+    demo_banner_message: "Você está usando um LLM Qwen3 open-weights com créditos fornecidos pela Cloudflare Workers AI. Os resultados podem variar, já que a base de código foi testada principalmente no `gpt-4.1`, mas seus tokens não vão a lugar algum para serem treinados! 🤖"
+    placeholder: "Pergunte qualquer coisa ..."
