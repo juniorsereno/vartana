@@ -1,6 +1,31 @@
 ---
 pt-BR:
   properties:
+    enter_manually_title: "Inserir propriedade manualmente"
+    edit_details: "Editar detalhes da conta"
     buttons:
       save: Salvar
       next: Próximo
+    overview:
+      name: Nome
+      placeholder: Casa de férias
+      type: Tipo de propriedade
+      select_type: Selecione o tipo
+      year_built: Ano de construção (opcional)
+      area: Área (opcional)
+      area_unit: Unidade de área
+    address:
+      line_1: Endereço Linha 1
+      city: Cidade
+      city_placeholder: São Paulo
+      state: Estado/Região
+      state_placeholder: SP
+      zip: CEP
+      country: País
+      country_placeholder: BR
+    balances:
+      market_value: Valor de mercado estimado
+    tabs:
+      overview: Visão Geral
+      value: Valor
+      address: Endereço

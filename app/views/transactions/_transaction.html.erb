@@ -73,16 +73,16 @@
 
                   <div class="flex items-center gap-1 flex-shrink-0">
                     <% if transaction.one_time? %>
-                      <span class="text-orange-500" title="One-time <%= entry.amount.negative? ? "income" : "expense" %> (excluded from averages)">
+                      <span class="text-orange-500" title="<%= t("transactions.row.one_time.tooltip", type: entry.amount.negative? ? t("transactions.row.one_time.income") : t("transactions.row.one_time.expense")) %>">
                         <%= icon "asterisk", size: "sm", color: "current" %>
                       </span>
                     <% end %>
 
                     <%# Pending indicator %>
                     <% if transaction.pending? %>
-                      <span class="inline-flex items-center gap-1 text-xs font-medium rounded-full px-1.5 py-0.5 border border-secondary text-secondary" title="Pending — may change when posted">
+                      <span class="inline-flex items-center gap-1 text-xs font-medium rounded-full px-1.5 py-0.5 border border-secondary text-secondary" title="<%= t("transactions.row.pending.tooltip") %>">
                         <%= icon "clock", size: "sm", color: "current" %>
-                        Pending
+                        <%= t("transactions.row.pending.label") %>
                       </span>
                     <% end %>
 

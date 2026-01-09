@@ -95,4 +95,16 @@ en:
         less_than: less than
       form:
         placeholder: "Search transactions ..."
+    summary:
+      total_transactions: Total transactions
+      income: Income
+      expenses: Expenses
+    row:
+      one_time:
+        income: income
+        expense: expense
+        tooltip: "One-time %{type} (excluded from averages)"
+      pending:
+        label: Pending
+        tooltip: "Pending — may change when posted"
         toggle_selection_checkboxes: Toggle all checkboxes

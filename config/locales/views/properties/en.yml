@@ -1,6 +1,31 @@
 ---
 en:
   properties:
+    enter_manually_title: "Enter property manually"
+    edit_details: "Edit account details"
     buttons:
       save: Save
       next: Next
+    overview:
+      name: Name
+      placeholder: Vacation home
+      type: Property type
+      select_type: Select type
+      year_built: Year Built (optional)
+      area: Area (optional)
+      area_unit: Area Unit
+    address:
+      line_1: Address Line 1
+      city: City
+      city_placeholder: San Francisco
+      state: State/Region
+      state_placeholder: CA
+      zip: Postal Code
+      country: Country
+      country_placeholder: USA
+    balances:
+      market_value: Estimated market value
+    tabs:
+      overview: Overview
+      value: Value
+      address: Address

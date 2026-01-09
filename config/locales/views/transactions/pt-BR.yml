@@ -91,5 +91,17 @@ pt-BR:
         greater_than: maior que
         less_than: menor que
       form:
-        placeholder: "Buscar transações ..."
+        placeholder: "Search transactions ..."
+    summary:
+      total_transactions: Total de transações
+      income: Receitas
+      expenses: Despesas
+    row:
+      one_time:
+        income: receita
+        expense: despesa
+        tooltip: "%{type} única (excluída das médias)"
+      pending:
+        label: Pendente
+        tooltip: "Pendente — pode mudar quando processado"
         toggle_selection_checkboxes: Alternar todas as caixas de seleção
