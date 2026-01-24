@@ -3,12 +3,8 @@ en:
   defaults:
     brand_name: "%{brand_name}"
     product_name: "%{product_name}"
-    actions:
-      edit: "Edit"
-      delete: "Delete"
-      save: "Save"
-      cancel: "Cancel"
-      search: "Search"
+  global:
+    expand: "Expand"
   activerecord:
     errors:
       messages:
@@ -115,17 +111,6 @@ en:
       month: Month
       second: Second
       year: Year
-  account_types:
-    depository: "Cash"
-    investment: "Investments"
-    crypto: "Crypto"
-    property: "Properties"
-    vehicle: "Vehicles"
-    other_asset: "Other Assets"
-    credit_card: "Credit Cards"
-    loan: "Loans"
-    other_liability: "Other Liabilities"
-
   errors:
     format: "%{attribute} %{message}"
     messages:

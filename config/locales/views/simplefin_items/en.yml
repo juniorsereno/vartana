@@ -14,7 +14,7 @@ en:
         invalid_token: Invalid setup token. Please check that you copied the complete token from SimpleFIN Bridge.
         token_compromised: The setup token may be compromised, expired, or already used. Please create a new one.
         create_failed: "Failed to connect: %{message}"
-        unexpected: An unexpected error occurred. Please try again or contact support.
+        unexpected: An unexpected error occurred. Please try again.
     destroy:
       success: SimpleFIN connection will be removed
     update:
@@ -24,7 +24,7 @@ en:
         invalid_token: Invalid setup token. Please check that you copied the complete token from SimpleFIN Bridge.
         token_compromised: The setup token may be compromised, expired, or already used. Please create a new one.
         update_failed: "Failed to update connection: %{message}"
-        unexpected: An unexpected error occurred. Please try again or contact support.
+        unexpected: An unexpected error occurred. Please try again.
     edit:
       setup_token:
         label: "SimpleFIN Setup Token:"
@@ -65,11 +65,23 @@ en:
       setup_needed: New accounts ready to set up
       setup_description: Choose account types for your newly imported SimpleFIN accounts.
       setup_action: Set Up New Accounts
+      setup_accounts_menu: Set Up Accounts
+      more_accounts_available:
+        one: "%{count} more account available to set up"
+        other: "%{count} more accounts available to set up"
+      accounts_skipped_tooltip: "Some accounts were skipped due to errors during sync"
+      accounts_skipped_label: "Skipped: %{count}"
+      rate_limited_ago: "Rate limited (%{time} ago)"
+      rate_limited_recently: "Rate limited recently"
       status: Last synced %{timestamp} ago
       status_never: Never synced
       status_with_summary: "Last synced %{timestamp} ago • %{summary}"
       syncing: Syncing...
       update: Update
+      stale_pending_note: "(excluded from budgets)"
+      stale_pending_accounts: "in: %{accounts}"
+      reconciled_details_note: "(see sync summary for details)"
+      duplicate_accounts_skipped: "Some accounts were skipped as duplicates — use 'Link existing accounts' to merge."
     select_existing_account:
       title: "Link %{account_name} to SimpleFIN"
       description: Select a SimpleFIN account to link to your existing account
@@ -86,3 +98,11 @@ en:
       errors:
         only_manual: Only manual accounts can be linked
         invalid_simplefin_account: Invalid SimpleFIN account selected
+    reconciled_status:
+      message:
+        one: "%{count} duplicate pending transaction reconciled"
+        other: "%{count} duplicate pending transactions reconciled"
+    stale_pending_status:
+      message:
+        one: "%{count} pending transaction older than %{days} days"
+        other: "%{count} pending transactions older than %{days} days"
