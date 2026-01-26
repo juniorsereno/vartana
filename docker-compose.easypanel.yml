@@ -50,9 +50,8 @@ x-rails-env: &rails_env
 
 services:
   web:
-    # IMPORTANTE: Substitua pelo seu repositório GitHub
-    # Formato: ghcr.io/usuario/repositorio:tag
-    image: ghcr.io/seu-usuario/seu-repo:latest
+    # Imagem do GitHub Container Registry
+    image: ghcr.io/juniorsereno/vartana:latest
     volumes:
       - app-storage:/rails/storage
     restart: unless-stopped
@@ -73,8 +72,8 @@ services:
       start_period: 40s
 
   worker:
-    # IMPORTANTE: Substitua pelo seu repositório GitHub
-    image: ghcr.io/seu-usuario/seu-repo:latest
+    # Imagem do GitHub Container Registry
+    image: ghcr.io/juniorsereno/vartana:latest
     command: bundle exec sidekiq
     volumes:
       - app-storage:/rails/storage
