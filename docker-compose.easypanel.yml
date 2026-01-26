@@ -1,0 +1,138 @@
+# ===========================================================================
+# Docker Compose para Easypanel
+# ===========================================================================
+# Este arquivo usa a imagem Docker do GitHub Container Registry
+# 
+# Configuração no Easypanel:
+# 1. Crie um novo projeto
+# 2. Adicione este docker-compose.yml
+# 3. Configure as variáveis de ambiente necessárias
+# 4. Deploy!
+#
+# IMPORTANTE: Substitua 'seu-usuario/seu-repo' pelo seu repositório GitHub
+# ===========================================================================
+
+x-db-env: &db_env
+  POSTGRES_USER: ${POSTGRES_USER:-sure_user}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  POSTGRES_DB: ${POSTGRES_DB:-sure_production}
+
+x-rails-env: &rails_env
+  <<: *db_env
+  SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+  SELF_HOSTED: "true"
+  RAILS_FORCE_SSL: ${RAILS_FORCE_SSL:-false}
+  RAILS_ASSUME_SSL: ${RAILS_ASSUME_SSL:-false}
+  RAILS_ENV: production
+  DB_HOST: db
+  DB_PORT: 5432
+  REDIS_URL: redis://redis:6379/1
+  # OpenAI (opcional - incorre custos)
+  OPENAI_ACCESS_TOKEN: ${OPENAI_ACCESS_TOKEN:-}
+  OPENAI_URI_BASE: ${OPENAI_URI_BASE:-}
+  OPENAI_MODEL: ${OPENAI_MODEL:-}
+  # SimpleFIN flags
+  SIMPLEFIN_DEBUG_RAW: ${SIMPLEFIN_DEBUG_RAW:-false}
+  SIMPLEFIN_INCLUDE_PENDING: ${SIMPLEFIN_INCLUDE_PENDING:-false}
+  # Lunchflow flags
+  LUNCHFLOW_DEBUG_RAW: ${LUNCHFLOW_DEBUG_RAW:-false}
+  LUNCHFLOW_INCLUDE_PENDING: ${LUNCHFLOW_INCLUDE_PENDING:-false}
+  # Onboarding
+  ONBOARDING_STATE: ${ONBOARDING_STATE:-invite_only}
+  # Market data
+  TWELVE_DATA_API_KEY: ${TWELVE_DATA_API_KEY:-}
+  # Langfuse
+  LANGFUSE_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-}
+  LANGFUSE_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-}
+  LANGFUSE_HOST: ${LANGFUSE_HOST:-https://cloud.langfuse.com}
+  # Debug
+  AI_DEBUG_MODE: ${AI_DEBUG_MODE:-false}
+
+services:
+  web:
+    # IMPORTANTE: Substitua pelo seu repositório GitHub
+    # Formato: ghcr.io/usuario/repositorio:tag
+    image: ghcr.io/seu-usuario/seu-repo:latest
+    volumes:
+      - app-storage:/rails/storage
+    restart: unless-stopped
+    environment:
+      <<: *rails_env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - sure_net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/up || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  worker:
+    # IMPORTANTE: Substitua pelo seu repositório GitHub
+    image: ghcr.io/seu-usuario/seu-repo:latest
+    command: bundle exec sidekiq
+    volumes:
+      - app-storage:/rails/storage
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      <<: *rails_env
+    networks:
+      - sure_net
+    healthcheck:
+      test: ["CMD-SHELL", "bundle exec sidekiqmon | grep -q 'Processes' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      <<: *db_env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-sure_user} -d ${POSTGRES_DB:-sure_production}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - sure_net
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - sure_net
+
+volumes:
+  app-storage:
+    driver: local
+  postgres-data:
+    driver: local
+  redis-data:
+    driver: local
+
+networks:
+  sure_net:
+    driver: bridge
